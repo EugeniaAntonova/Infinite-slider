@@ -68,11 +68,18 @@ const links = document.querySelectorAll('.burger-nav-link')
 
 const onBurgerClick = (evt) => {
   evt.preventDefault();
+  burger.classList.toggle('close')
   burgerMenu.classList.toggle('shown');
 }
 
-const onNavLinkClick = () => {
+const onNavLinkClick = (evt) => {
+  evt.preventDefault();
+  const sectionId = evt.target.dataset.section;
+  slider.classList.add('no-transition');
+  slider.querySelector(`${sectionId}`).scrollIntoView();
+  burger.classList.remove('close')
   burgerMenu.classList.remove('shown');
+  slider.classList.remove('no-transition');
 }
 
 burger.addEventListener('click', onBurgerClick);

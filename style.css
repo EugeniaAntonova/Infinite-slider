@@ -88,6 +88,17 @@
 
 .btn.burger {
   background-color: orange;
+  background-image: url(sprite.png);
+  background-position: -41px 0px;
+  width: 41px;
+  height: 35px;
+}
+
+.btn.burger.close {
+  background-image: url(sprite.png);
+  background-position: 0px 0px;
+  width: 41px;
+  height: 39px;
 }
 
 section.burger-menu {
