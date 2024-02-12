@@ -58,3 +58,24 @@ slider.addEventListener("mousedown", startDragging);
 document.addEventListener("mouseup", stopDragging);
 slider.addEventListener("mousemove", dragging);
 slider.addEventListener("scroll", infiniteScroll);
+
+// burger
+
+const burger = document.querySelector('a.burger');
+const burgerMenu = document.querySelector('section.burger-menu');
+const links = document.querySelectorAll('.burger-nav-link')
+
+
+const onBurgerClick = (evt) => {
+  evt.preventDefault();
+  burgerMenu.classList.toggle('shown');
+}
+
+const onNavLinkClick = () => {
+  burgerMenu.classList.remove('shown');
+}
+
+burger.addEventListener('click', onBurgerClick);
+links.forEach((link) => {
+  link.addEventListener('click', onNavLinkClick);
+})
