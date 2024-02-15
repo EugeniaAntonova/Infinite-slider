@@ -24,14 +24,16 @@ controls.forEach((control) => {
 })
 
 const startDragging = (evt) => {
-  isDragging = true;
-  slider.classList.add('dragging');
-  
-  startX = evt.pageX;
-  startScrollLeft = slider.scrollLeft;
+  if (evt.target.tagName == 'SECTION') {
+    isDragging = true;
+    slider.classList.add('dragging');
+    
+    startX = evt.pageX;
+    startScrollLeft = slider.scrollLeft;
+  }
 }
 
-const stopDragging = (evt) => {
+const stopDragging = () => {
   isDragging = false;
   slider.classList.remove('dragging');
 }
